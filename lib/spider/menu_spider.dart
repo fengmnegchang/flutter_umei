@@ -66,6 +66,6 @@ parseMenu() async {
 // 数据的储存
 void getMenu() async {
   LeftMenuModel data = await parseMenu();
-  String dataStr = json.encode(data.toJson(data));
+  String dataStr = json.encode(data.toJson());
   print("dataStr===" + dataStr);
 }

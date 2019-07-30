@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_umei/home_page.dart';
 import 'package:flutter_umei/menu/left_menu_widget.dart';
+import 'package:flutter_umei/service/rest_client.dart';
 import 'package:flutter_umei/spider/menu_spider.dart';
 
 class DrawerMenuApp extends StatelessWidget {
@@ -26,6 +28,10 @@ class _DrawerMenuPageState extends State<DrawerMenuPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+//    final dio = Dio();
+//    dio.options.headers["Content-Type"] = "application/json";
+//    final client = RestClient(dio);
+//    client.version().then((it) => print(it.toJson()));
     getMenu();
   }
 

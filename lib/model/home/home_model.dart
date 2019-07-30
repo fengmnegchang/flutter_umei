@@ -4,7 +4,7 @@ part 'home_model.g.dart';
 
 
 @JsonSerializable()
-class HomeModel extends Object  {
+class HomeModel extends Object {
 
   @JsonKey(name: 'data')
   List<Data> data;
@@ -13,11 +13,13 @@ class HomeModel extends Object  {
 
   factory HomeModel.fromJson(Map<String, dynamic> srcJson) => _$HomeModelFromJson(srcJson);
 
+  Map<String, dynamic> toJson() => _$HomeModelToJson(this);
+
 }
 
 
 @JsonSerializable()
-class Data extends Object  {
+class Data extends Object {
 
   @JsonKey(name: 'title')
   String title;
@@ -32,11 +34,13 @@ class Data extends Object  {
 
   factory Data.fromJson(Map<String, dynamic> srcJson) => _$DataFromJson(srcJson);
 
+  Map<String, dynamic> toJson() => _$DataToJson(this);
+
 }
 
 
 @JsonSerializable()
-class Images extends Object  {
+class Images extends Object {
 
   @JsonKey(name: 'title')
   String title;
@@ -44,21 +48,14 @@ class Images extends Object  {
   @JsonKey(name: 'href')
   String href;
 
-  @JsonKey(name: 'title2')
-  String title2;
-
-  @JsonKey(name: 'href2')
-  String href2;
-
-  @JsonKey(name: 'date')
-  String date;
-
   @JsonKey(name: 'img')
   String img;
 
-  Images(this.title,this.href,this.title2,this.href2,this.date,this.img,);
+  Images(this.title,this.href,this.img,);
 
   factory Images.fromJson(Map<String, dynamic> srcJson) => _$ImagesFromJson(srcJson);
+
+  Map<String, dynamic> toJson() => _$ImagesToJson(this);
 
 }
 

@@ -4,7 +4,7 @@ part 'left_menu_model.g.dart';
 
 
 @JsonSerializable()
-class LeftMenuModel extends Object  {
+class LeftMenuModel extends Object {
 
   @JsonKey(name: 'data')
   List<Data> data;
@@ -13,14 +13,13 @@ class LeftMenuModel extends Object  {
 
   factory LeftMenuModel.fromJson(Map<String, dynamic> srcJson) => _$LeftMenuModelFromJson(srcJson);
 
-  Map<String, dynamic> toJson(LeftMenuModel instance) => _$LeftMenuModelToJson(instance);
-
+  Map<String, dynamic> toJson() => _$LeftMenuModelToJson(this);
 
 }
 
 
 @JsonSerializable()
-class Data extends Object  {
+class Data extends Object {
 
   @JsonKey(name: 'title')
   String title;
@@ -34,6 +33,8 @@ class Data extends Object  {
   Data(this.title,this.href,this.menus,);
 
   factory Data.fromJson(Map<String, dynamic> srcJson) => _$DataFromJson(srcJson);
+
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 
 }
 
@@ -50,6 +51,8 @@ class Menus extends Object {
   Menus(this.title,this.href,);
 
   factory Menus.fromJson(Map<String, dynamic> srcJson) => _$MenusFromJson(srcJson);
+
+  Map<String, dynamic> toJson() => _$MenusToJson(this);
 
 }
 

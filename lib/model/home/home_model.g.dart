@@ -33,19 +33,11 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
 
 Images _$ImagesFromJson(Map<String, dynamic> json) {
   return Images(
-      json['title'] as String,
-      json['href'] as String,
-      json['title2'] as String,
-      json['href2'] as String,
-      json['date'] as String,
-      json['img'] as String);
+      json['title'] as String, json['href'] as String, json['img'] as String);
 }
 
 Map<String, dynamic> _$ImagesToJson(Images instance) => <String, dynamic>{
       'title': instance.title,
       'href': instance.href,
-      'title2': instance.title2,
-      'href2': instance.href2,
-      'date': instance.date,
       'img': instance.img
     };
