@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_umei/home_page.dart';
 import 'package:flutter_umei/menu/left_menu_widget.dart';
+import 'package:flutter_umei/spider/menu_spider.dart';
 
 class DrawerMenuApp extends StatelessWidget {
 // This widget is the root of your application.
@@ -20,6 +21,14 @@ class DrawerMenuPage extends StatefulWidget {
 }
 
 class _DrawerMenuPageState extends State<DrawerMenuPage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getMenu();
+  }
+
 
   @override
   Widget build(BuildContext context) {

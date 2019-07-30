@@ -13,7 +13,7 @@ LeftMenuModel _$LeftMenuModelFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$LeftMenuModelToJson(LeftMenuModel instance) =>
-    <String, dynamic>{'data': instance.data};
+    <String, dynamic>{'data': _$ListDataToJson(instance.data)};
 
 Data _$DataFromJson(Map<String, dynamic> json) {
   return Data(
@@ -25,14 +25,30 @@ Data _$DataFromJson(Map<String, dynamic> json) {
           ?.toList());
 }
 
+List<dynamic> _$ListDataToJson(List<Data> instance) {
+  List list = new List();
+  for (var o in instance) {
+    list.add(_$DataToJson(o));
+  }
+  return list;
+}
+
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'title': instance.title,
       'href': instance.href,
-      'menus': instance.menus
+      'menus': _$ListMenusToJson(instance.menus)
     };
 
 Menus _$MenusFromJson(Map<String, dynamic> json) {
   return Menus(json['title'] as String, json['href'] as String);
+}
+
+List<dynamic> _$ListMenusToJson(List<Menus> instance) {
+  List list = new List();
+  for (var o in instance) {
+    list.add(_$MenusToJson(o));
+  }
+  return list;
 }
 
 Map<String, dynamic> _$MenusToJson(Menus instance) =>

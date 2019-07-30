@@ -13,6 +13,9 @@ class LeftMenuModel extends Object  {
 
   factory LeftMenuModel.fromJson(Map<String, dynamic> srcJson) => _$LeftMenuModelFromJson(srcJson);
 
+  Map<String, dynamic> toJson(LeftMenuModel instance) => _$LeftMenuModelToJson(instance);
+
+
 }
 
 
